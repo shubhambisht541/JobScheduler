@@ -1,4 +1,4 @@
-# Implementation of CRON job using Quartz.
+# Implementation of CRON job using Quartz in .Net 8.0.
 
 ## To build and run your app:
 
