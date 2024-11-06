@@ -24,7 +24,7 @@ jobs:
         run: dotnet restore ./JobScheduler.sln
 
       - name: Build
-        run: dotnet build ./JobScheduler.sln --configuration Relase --no-restore
+        run: dotnet build ./JobScheduler.sln --configuration Release --no-restore
 
       - name: Publish
         run: dotnet publish ./JobScheduler.sln --configuraiton Release --output '{{ APP_PUBLISH_PATH }}'
