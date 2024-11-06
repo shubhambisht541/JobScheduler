@@ -12,11 +12,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddQuartz(q =>
 {
-
     var cronExpression = builder.Configuration["Quartz:FileProcessingJob:CronExpression"] ?? string.Empty;
-
     q.AddJob<FileProcessingJob>(job => job.WithIdentity(nameof(FileProcessingJob)));
-
     q.AddTrigger(trigger => trigger
         .ForJob(nameof(FileProcessingJob))
         .WithIdentity(nameof(FileProcessingJob))
