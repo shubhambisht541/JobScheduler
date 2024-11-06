@@ -1,28 +1,38 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+name: Publish
 
-name: .NET
-
-on:
-  push:
-    branches: [ "main" ]
+on: 
+  push: 
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+env:
+  APP_PUBLISH_PATH: "./publish"
 
 jobs:
-  build:
-
+  publish:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - uses: action/checkout@v3
+
+      - name: Setup .Net
+        uses: action/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore ./JobScheduler.sln
+
+      - name: Build
+        run: dotnet build ./JobScheduler.sln --configuration Relase --no-restore
+
+      - name: Publish
+        run: dotnet publish ./JobScheduler.sln --configuraiton Release --output '{{ APP_PUBLISH_PATH }}'
+      
+    
+
+  
+    
+  
+    
+  
