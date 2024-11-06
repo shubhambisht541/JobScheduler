@@ -17,7 +17,7 @@ builder.Services.AddQuartz(q =>
     q.AddTrigger(trigger => trigger
         .ForJob(nameof(FileProcessingJob))
         .WithIdentity(nameof(FileProcessingJob))
-        .WithCronSchedule(cronExpression
+        .WithCronSchedule(cronExpression)
         //.WithSimpleSchedule(
         //        schedule => schedule.WithIntervalInSeconds(10).RepeatForever())
         );
