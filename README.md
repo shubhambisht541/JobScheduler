@@ -139,6 +139,6 @@ Contributions are welcome! To contribute:
 
 ## Authors
 
-- **shubhambisht541** - [GitHub Profile]([https://github.com/your-profile](https://github.com/shubhambisht541))
+- **shubhambisht541** - [GitHub Profile](https://github.com/shubhambisht541)
 
 ---
